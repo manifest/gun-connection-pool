@@ -34,11 +34,11 @@
 %% Poolboy callbacks
 %% =============================================================================
 
-start_link(Conn) ->
+start_link(Conf) ->
 	gun:open(
-		validate_host(Conn),
-		validate_port(Conn),
-		maps:get(options, Conn, #{})).
+		validate_host(Conf),
+		validate_port(Conf),
+		maps:get(options, Conf, #{})).
 
 %% =============================================================================
 %% Internal functions
