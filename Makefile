@@ -6,7 +6,7 @@ DEPS = \
 	poolboy \
 	gun
 
-dep_poolboy = git git://github.com/devinus/poolboy.git 1.5.1
+dep_poolboy = git git://github.com/manifest/poolboy.git feature/worker-args-any
 dep_gun = git git://github.com/manifest/gun.git feature/reply-to
 
 SHELL_DEPS = tddreloader
