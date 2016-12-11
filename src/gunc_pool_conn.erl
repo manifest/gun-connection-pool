@@ -35,7 +35,8 @@
 %% =============================================================================
 
 start_link(Conf) ->
-	gun:open(
+	gun:start_link(
+		self(),
 		validate_host(Conf),
 		validate_port(Conf),
 		maps:get(options, Conf, #{})).
