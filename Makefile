@@ -7,7 +7,7 @@ DEPS = \
 	gun
 
 dep_poolboy = git git://github.com/manifest/poolboy.git feature/worker-args-any
-dep_gun = git git://github.com/manifest/gun.git feature/reply-to
+dep_gun = git git://github.com/manifest/gun.git feature/head-1xx
 
 SHELL_DEPS = tddreloader
 SHELL_OPTS = \
