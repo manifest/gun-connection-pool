@@ -21,3 +21,5 @@ SHELL_OPTS = \
 	-s tddreloader start
 
 include erlang.mk
+
+app:: rebar.config
