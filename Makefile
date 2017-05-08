@@ -1,13 +1,19 @@
 PROJECT = gunc_pool
 PROJECT_DESCRIPTION = Gun connection pool
-PROJECT_VERSION = 0.1.0
 
 DEPS = \
 	poolboy \
 	gun
 
+BUILD_DEPS = \
+	version.mk
+
+DEP_PLUGINS = \
+	version.mk
+
 dep_poolboy = git git://github.com/manifest/poolboy.git feature/worker-args-any
 dep_gun = git git://github.com/manifest/gun.git feature/head-1xx
+dep_version.mk = git git://github.com/manifest/version.mk.git master
 
 SHELL_DEPS = tddreloader
 SHELL_OPTS = \
