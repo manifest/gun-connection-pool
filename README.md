@@ -22,7 +22,7 @@ Pool =
     connection =>
       #{host => "google.com",
         port => 443,
-        options => #{protocols => [http]}}},
+        options => #{protocols => [http]}, transport => ssl}},
 ChildSpec = gunc_pool:child_spec(Pool),
 supervisor:start_child(whereis(gunc_pool_sup), ChildSpec).
 

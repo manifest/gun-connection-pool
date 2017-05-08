@@ -61,11 +61,6 @@ try_lock(Pool) ->
 unlock(Pool, Pid) ->
 	poolboy:checkin(Pool, Pid).
 
-%% We don't want to spawn new connections, we also don't want to respawn
-%% existed ones (after the max overflow size is reached), so that we
-%% always have `max_overflow` equal to 0. This way, we still can process
-%% more than `size` requests by delaying them on `timeout` value using
-%% `lock/{1,2}` functions.
 -spec child_spec(map()) -> supervisor:child_spec().
 child_spec(#{name := Name, size := Size, connection := Conn} = M) ->
 	poolboy:child_spec(
@@ -73,6 +68,6 @@ child_spec(#{name := Name, size := Size, connection := Conn} = M) ->
 		[ {worker_module, gunc_pool_conn},
 			{name, {local, Name}},
 			{size, Size},
-			{max_overflow, 0},
+			{max_overflow, maps:get(max_overflow, M, 0)},
 			{strategy, maps:get(strategy, M, lifo)} ],
 		Conn).
