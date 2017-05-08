@@ -6,5 +6,5 @@ notifications:
     on_success: never
     on_failure: always
 otp_release:
-  - 19.0
+  - 19.3
 
