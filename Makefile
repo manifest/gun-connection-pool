@@ -12,7 +12,7 @@ DEP_PLUGINS = \
 	version.mk
 
 dep_poolboy = git git://github.com/manifest/poolboy.git feature/worker-args-any
-dep_gun = git git://github.com/manifest/gun.git feature/head-1xx
+dep_gun = git git://github.com/manifest/gun.git feature/head-1xx-z
 dep_version.mk = git git://github.com/manifest/version.mk.git master
 
 SHELL_DEPS = tddreloader
